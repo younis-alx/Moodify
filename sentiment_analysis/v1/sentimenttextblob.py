@@ -8,11 +8,13 @@ from dataclasses import dataclass
 
 @dataclass
 class Mood:
+    """A mood with an emoji and a sentiment value"""
     emoji: str
     sentiment: float
 
 
 def get_mood(input_text, *, threshold):
+    """Return a mood based on the input text and a threshold value"""
     sentiment = TextBlob(input_text).sentiment.polarity
 
     friendly_threshold = threshold
