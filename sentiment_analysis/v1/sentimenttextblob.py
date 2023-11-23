@@ -1,5 +1,7 @@
 """
-Sentiment analysis using TextBlob
+Sentiment analysis using TextBlob library
+(https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis)
+
 """
 from textblob import TextBlob
 from dataclasses import dataclass
@@ -25,6 +27,6 @@ def get_mood(input_text, *, threshold):
     
 if __name__ == '__main__':
     while True:
-        text: str = input("Enter some text: ")
-        mood: Mood = get_mood(text, threshold=0.3)
+        text = input("Enter some text: ")
+        mood = get_mood(text, threshold=0.3)
         print(f"Mood: {mood.emoji} ({mood.sentiment})")
