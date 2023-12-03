@@ -31,6 +31,28 @@ class Parser:
             """
         )
     
+    def parse_get_tweet_replies(self):
+        return self.parse(
+                    """
+                       replies[*].\
+                       {
+                        tweet_id: tweet_id,
+                        created_at: creation_date,
+                        reply_text: text,
+                        video_url: video_url,
+                        media_url: media_url,
+                        reply_to_tweet_id: conversation_id,
+                        user: {
+                            user_id: user.user_id,
+                            user_name: user.name,
+                            user_profile_image: user.profile_pic_url,
+                            location: user.location
+                            }
+                        
+                        }
+                    """
+        )
+
     def parse_get_user_followers(self):
         pass
 
@@ -103,11 +125,26 @@ if __name__ == '__main__':
                     """
                        replies[*].\
                        {
-                        tweet_id: tweet_id
+                        tweet_id: tweet_id,
+                        created_at: creation_date,
+                        reply_text: text,
+                        video_url: video_url,
+                        media_url: media_url,
+                        reply_to_tweet_id: conversation_id,
+                        user: {
+                            user_id: user.user_id,
+                            user_name: user.name,
+                            user_profile_image: user.profile_pic_url,
+                            location: user.location
+                            }
+                        
                         }
                     """
-                    )# TODO: fix query
-    print(vars(res))
+                    )
+    x = parser.parse("{replies_count: length(replies)}")
+    res.append(x)
+
+    print(res) 
 
 
             # video_url: video_url[1].url,
