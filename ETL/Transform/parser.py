@@ -1,10 +1,14 @@
 import json
 import jmespath
+from dataclasses import dataclass
 
-
+@dataclass
 class Parser:
     def __init__(self, data):
         self.data = data
+    
+    def __dict__(self):
+        return self.__object__.__dict__
 
     def parse(self, query):
         return jmespath.search(query, self.data)
@@ -96,9 +100,14 @@ if __name__ == '__main__':
         data = json.load(f)
     parser = Parser(data)
     res = parser.parse(
-        "{replies[].{tweet_id: tweet_id}}"
-    )# TODO: fix query
-    print(res)
+                    """
+                       replies[*].\
+                       {
+                        tweet_id: tweet_id
+                        }
+                    """
+                    )# TODO: fix query
+    print(vars(res))
 
 
             # video_url: video_url[1].url,
