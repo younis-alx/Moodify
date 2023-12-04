@@ -26,7 +26,6 @@ class SentimentAnalyzer:
             "en": "cardiffnlp/twitter-roberta-base-sentiment", # English
             "ar": "cardiffnlp/twitter-arabic-roberta-base-sentiment", # Arabic
             "fr": "cardiffnlp/twitter-french-roberta-base-sentiment", # French
-            # "es": "cardiffnlp/twitter-spanish-roberta-base-sentiment", # Spanish
             "de": "cardiffnlp/twitter-german-roberta-base-sentiment", # German
         }
         return model_map.get(language, "cardiffnlp/twitter-roberta-base-sentiment")  # Default to English model
