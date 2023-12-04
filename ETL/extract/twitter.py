@@ -33,7 +33,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
     
 
     def get_tweet_replies(self, tweet_id):
@@ -42,10 +44,10 @@ class Twitter:
             raise ValueError('Tweet ID must be 19 characters long')
         elif tweet_id is None:
             raise ValueError('Tweet ID cannot be None')
-        elif limit is None:
-            raise ValueError('Limit cannot be None')
-        elif limit < 1 or limit > 100:
-            raise ValueError('Limit must be between 1 and 100')
+        # elif limit is None:
+        #     raise ValueError('Limit cannot be None')
+        # elif limit < 1 or limit > 100:
+        #     raise ValueError('Limit must be between 1 and 100')
         
         api = self.api_key.get_next_api_key()
         url = "https://twitter154.p.rapidapi.com/tweet/replies"
@@ -57,7 +59,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
     
 
     def get_tweet_replies_continuation(self, tweet_id, continue_token, limit=2):
@@ -70,10 +74,10 @@ class Twitter:
             raise ValueError('Continue token cannot be None')
         elif limit is None:
             raise ValueError('Limit cannot be None')
-        elif limit < 1 or limit > 100:
+        elif limit <= 1 or limit > 100:
             raise ValueError('Limit must be between 1 and 100')
-        elif continue_token is not None and isinstance(continue_token, str):
-            raise ValueError('Continue token must be 36 characters long')
+        # elif len(continue_token) != 36:
+        #     raise ValueError('Continue token must be 36 characters long')
         elif continue_token == '' or continue_token == ' ': 
             raise ValueError('Continue token cannot be empty')
         
@@ -89,7 +93,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
         
 
 
@@ -108,7 +114,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
 
 
     def get_user_tweets(self, username, limit=10, include_replies=False, include_pinned=False):
@@ -135,7 +143,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
 
 
     def get_user_followers(self, user_id, limit=5):
@@ -158,7 +168,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
 
 
     def get_user_following(self, user_id, limit=5):
@@ -182,7 +194,9 @@ class Twitter:
             "X-RapidAPI-Host": self.api_host
         }
         response = requests.get(url, headers=headers, params=querystring)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        return None
 
 
 if __name__ == '__main__':
