@@ -1,11 +1,11 @@
-from ETL.extract.twitter import Twitter
-from ETL.extract.URL_validator import url_validator, id_extractor
-from ETL.extract.APIKeyManager import APIKeyManager
-from ETL.transform import Parser
-
+from extract.twitter import Twitter
+from extract.URL_validator import url_validator, id_extractor
+from extract.API_key_manager import APIKeyManager
+from transform.parser import Parser
+from load.storage import Storage
 from sentiment_analysis.v1.roberta import SentimentAnalyzer
 
-import jmespath
+# import jmespath
 
 
 """
@@ -29,6 +29,7 @@ else:
     raise Exception('Invalid URL')
 
 twitter = Twitter()
+storge = Storage('storage.json')
 tweet = twitter.get_tweet(id)
 tweet_parser = Parser(tweet)
 #TODO: fix the pattern
@@ -43,16 +44,37 @@ if tweet is not None:
     replies = twitter.get_tweet_replies(id)
     if replies is not None:
         replies_parser = Parser(replies)
-        parsed_replies = tweet_parser.parse_get_tweet_replies()
-    
+        parsed_replies = replies_parser.parse_get_tweet_replies()
+        merged_tweet_replies = tweet_parser.merge_tweet_replies(parsed_tweet, parsed_replies)
+        if storge.is_storage_empty():
+            storge.save_and_overwrite(merged_tweet_replies)
+        else:
+            storge.append(merged_tweet_replies, id)
+    else:
+        print('No replies found')
+else:
+    print('No tweet found')
 
 
 if replies['continuation_token'] is not None or replies['continuation_token'] != '':
     continuation_token = replies['continuation_token']
     while continuation_token and limit > 0:
-        replies = twitter.get_tweet_replies_continuation(id, continuation_token)
-        continuation_token = replies['continuation_token']
-        limit -= 1
+        break
+    replies = twitter.get_tweet_replies_continuation(id, continuation_token)
+    parsed_replies_continuation = replies_parser.parse_get_tweet_replies()
+    print(parsed_replies_continuation)
+    load_storage = storge.load_tweet(id)
+    merged_tweet_replies_continuation = tweet_parser.merge_tweet_replies_continuation(load_storage, parsed_replies_continuation)
+    storge.update(merged_tweet_replies_continuation, id)
+    continuation_token = replies['continuation_token']
+    limit -= 1
+
+tweet_storge = storge.load_tweet(id)
+roberta = SentimentAnalyzer()
+
+result = roberta.analyze_sentiment(tweet_storge['tweet_text'])
+tweet_storge['sentiment'] = [result]
+storge.update(tweet_storge, id)
 
 if __name__ == "__main__":
     pass
