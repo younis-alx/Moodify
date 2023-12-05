@@ -203,6 +203,6 @@ if __name__ == '__main__':
     twitter = Twitter()
     res = twitter.get_tweet_replies('1729675116609429582')
     # res.parse()
-    with open('tweet.json', 'w+') as f:
+    with open('replies.json', 'w+') as f:
         json.dump(res, f, indent=4)
     # twitter.get_tweet('123456789')
