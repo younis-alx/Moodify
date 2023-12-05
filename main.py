@@ -21,7 +21,7 @@ Puedo code:
 
 """
 limit = 1
-continue_token = ''
+continuation_token = ''
 url = 'https://twitter.com/freemonotheist/status/1731003302693728422'
 if url_validator(url):
     id = id_extractor(url)
@@ -40,15 +40,18 @@ tweet_parser = Parser(tweet)
 # no way to store the result in the json file 
 if tweet is not None:
     parsed_tweet = tweet_parser.parse_get_tweet()
+    replies = twitter.get_tweet_replies(id)
+    if replies is not None:
+        replies_parser = Parser(replies)
+        parsed_replies = tweet_parser.parse_get_tweet_replies()
     
 
-replies = twitter.get_tweet_replies(id)
 
-if replies['continue_token'] is not None or replies['continue_token'] != '':
-    continue_token = replies['continue_token']
-    while continue_token and limit > 0:
-        replies = twitter.get_tweet_replies_continuation(id, continue_token)
-        continue_token = replies['continue_token']
+if replies['continuation_token'] is not None or replies['continuation_token'] != '':
+    continuation_token = replies['continuation_token']
+    while continuation_token and limit > 0:
+        replies = twitter.get_tweet_replies_continuation(id, continuation_token)
+        continuation_token = replies['continuation_token']
         limit -= 1
 
 if __name__ == "__main__":
