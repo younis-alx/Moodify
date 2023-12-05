@@ -18,7 +18,7 @@ class Parser:
                 video_url: video_url[1].url,
                 tweet_text: text,
                 created_at: creation_date,
-                user: {
+                user_tweet: {
                         user_id: user.user_id,
                         user_name: user.name,
                         user_profile_image: user.profile_pic_url
@@ -33,7 +33,7 @@ class Parser:
                     "replies | \
                        {\
                        replies_count: length(@),\
-                       combined_results: [*].\
+                       combined_replies: [*].\
                        {\
                        tweet_id: tweet_id,\
                        created_at: creation_date, \
@@ -41,7 +41,7 @@ class Parser:
                        video_url: video_url, \
                        media_url: media_url, \
                        reply_to_tweet_id: conversation_id, \
-                       user: \
+                       user_replies: \
                        {\
                        user_id: user.user_id, \
                        user_name: user.name, \
@@ -51,75 +51,22 @@ class Parser:
         )
         return res
 
-    def parse_get_user_followers(self):
-        pass
-
-    def parse_json(self, query):
-        return json.dumps(self.parse(query))
-
-    def parse_file(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write(self.parse_json(query))
-
-    def parse_file_append(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write(self.parse_json(query))
-
-    def parse_file_overwrite(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write(self.parse_json(query))
-
-    def parse_file_append_new_line(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write('\n')
-            f.write(self.parse_json(query))
-
-    def parse_file_overwrite_new_line(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write('\n')
-            f.write(self.parse_json(query))
-
-    def parse_file_append_new_line_csv(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write('\n')
-            f.write(self.parse(query))
-
-    def parse_file_overwrite_new_line_csv(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write('\n')
-            f.write(self.parse(query))
-
-    def parse_file_append_csv(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write(self.parse(query))
-
-    def parse_file_overwrite_csv(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write(self.parse(query))
-
-    def parse_file_append_new_line_json(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write('\n')
-            f.write(self.parse_json(query))
-
-    def parse_file_overwrite_new_line_json(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write('\n')
-            f.write(self.parse_json(query))
-
-    def parse_file_append_json(self, query, file_path):
-        with open(file_path, 'a') as f:
-            f.write(self.parse_json(query))
-
-    def parse_file_overwrite_json(self, query, file_path):
-        with open(file_path, 'w') as f:
-            f.write(self.parse_json(query))
+    def merge_tweet_replies(self, tweet_data, replies_data):
+        """Merge tweet data and replies data into one object"""
+        tweet_data['replies_count'] = replies_data['replies_count']
+        tweet_data['combined_replies'] = replies_data['combined_replies']
+        return {tweet_data['tweet_id']: tweet_data}
+    
 
 if __name__ == '__main__':
     with open('tweet.json', 'r') as f:
-        data = json.load(f)
-    parser = Parser(data)
-    res = parser.parse_get_tweet_replies()
+        tweet = json.load(f)
+    with open('replies.json', 'r') as f:
+        replies = json.load(f)
+    parser = Parser(tweet)
+    res = parser.merge_tweet_replies(tweet, replies)
+    with open('storage.json', 'w') as f:
+        json.dump(res, f, indent=4)
 
     print(res) 
 
