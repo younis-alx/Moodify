@@ -75,6 +75,11 @@ roberta = SentimentAnalyzer()
 result = roberta.analyze_sentiment(tweet_storge['tweet_text'])
 tweet_storge['sentiment'] = [result]
 storge.update(tweet_storge, id)
+for reply in tweet_storge['combined_replies']:
+    result = roberta.analyze_sentiment(reply['reply_text'])
+    reply['sentiment'] = [result]
+    storge.update(tweet_storge, id)
+    print(reply['sentiment'])
 
 if __name__ == "__main__":
     pass
