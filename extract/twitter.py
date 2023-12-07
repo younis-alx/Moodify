@@ -34,6 +34,7 @@ class Twitter:
         response = requests.get(url, headers=headers, params=querystring)
         if response.status_code == 200:
             return response.json()
+            
         return None
     
 
@@ -85,7 +86,7 @@ class Twitter:
         url = "https://twitter154.p.rapidapi.com/tweet/replies"
         querystring = {
             "tweet_id": tweet_id,
-            "continue_token": continue_token,
+            "continue_token": continue_token
             }
         headers = {
             "X-RapidAPI-Key": api,
