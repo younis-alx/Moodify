@@ -56,15 +56,17 @@ class Parser:
 
     def merge_tweet_replies(self, tweet_data, replies_data):
         """Merge tweet data and replies data into one object"""
-        tweet_data['replies_count'] = replies_data['replies_count']
-        tweet_data['combined_replies'] = replies_data['combined_replies']
-        return {tweet_data['tweet_id']: tweet_data}
+        merged_data = tweet_data.copy()
+        merged_data['replies_count'] = replies_data['replies_count']
+        merged_data['combined_replies'] = replies_data['combined_replies']
+        return merged_data
     
     def merge_tweet_replies_continuation(self, replies_data, replies_data_continuation):
         """Merge tweet data and replies data into one object"""
-        replies_data['combined_replies'] = replies_data['combined_replies'] + replies_data_continuation['combined_replies']
-        replies_data['replies_count'] = len(replies_data['combined_replies'])
-        return replies_data
+        merged_data = replies_data.copy()
+        merged_data['combined_replies'] += replies_data_continuation['combined_replies']
+        merged_data['replies_count'] = len(merged_data['combined_replies'])
+        return merged_data
         
     
 
