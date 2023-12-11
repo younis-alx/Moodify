@@ -1,4 +1,5 @@
 from os import getenv
+from os.path import dirname, abspath
 
 from dotenv import load_dotenv
 
@@ -10,5 +11,6 @@ if storage == "db":
     # Will be added on later adaptations
     pass
 else:
-    from .storage import Storage
-    storage = Storage('../../storage.json')
+    from backend.load.storage import Storage
+    storage = Storage(storage_path=abspath(
+        dirname(dirname(__file__))) + '/storage.json')
