@@ -9,8 +9,6 @@ app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
-
-
 @app.errorhandler(404)
 def not_found(error):
     """ 404 Error
@@ -19,7 +17,8 @@ def not_found(error):
       404:
         description: a resource was not found
     """
-    return make_response(jsonify({'error': "Not found"}), 404)
+    return make_response(jsonify({'error': str(error)}), 404)
+
 
 app.config['SWAGGER'] = {
     'title': 'Moodify API',
