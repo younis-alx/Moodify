@@ -12,7 +12,7 @@ class Parser:
 
     def parse(self, query):
         return jmespath.search(query, self.data)
-    
+
     def parse_get_tweet(self):
         return self.parse(
             """
@@ -30,10 +30,10 @@ class Parser:
             }
             """
         )
-    
+
     def parse_get_tweet_replies(self):
         res = self.parse(
-                    "replies | \
+            "replies | \
                        {\
                        replies_count: length(@),\
                        combined_replies: [*].\
@@ -56,19 +56,24 @@ class Parser:
 
     def merge_tweet_replies(self, tweet_data, replies_data):
         """Merge tweet data and replies data into one object"""
+        if tweet_data is None or replies_data is None:
+            raise Exception('Tweet or replies is None')
+        for reply in replies_data['combined_replies']:
+            if reply['reply_to_tweet_id'] != tweet_data['tweet_id']:
+                raise Exception('Tweet and replies are not related')
+
         merged_data = tweet_data.copy()
         merged_data['replies_count'] = replies_data['replies_count']
         merged_data['combined_replies'] = replies_data['combined_replies']
         return merged_data
-    
+
     def merge_tweet_replies_continuation(self, replies_data, replies_data_continuation):
         """Merge tweet data and replies data into one object"""
         merged_data = replies_data.copy()
         merged_data['combined_replies'] += replies_data_continuation['combined_replies']
         merged_data['replies_count'] = len(merged_data['combined_replies'])
         return merged_data
-        
-    
+
 
 if __name__ == '__main__':
     with open('tweet.json', 'r') as f:
@@ -80,5 +85,4 @@ if __name__ == '__main__':
     with open('storage.json', 'w') as f:
         json.dump(res, f, indent=4)
 
-    print(res) 
-
+    print(res)
