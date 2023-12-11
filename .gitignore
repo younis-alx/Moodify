@@ -2,3 +2,4 @@ moodify-env/
 .env
 __pycache__/
 Pipfile*
+.vscode/
