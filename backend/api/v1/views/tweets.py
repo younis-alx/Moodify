@@ -1,13 +1,13 @@
 from backend.load import storage
 from backend.api.v1.views import app_views
-from flask import jsonify, request, abort
+from flask import jsonify, request, abort, Response
 from flasgger.utils import swag_from
 from backend.sentiment_analysis.v1.tweetnlp import InferenceAPI
 from backend.extract.URL_validator import url_validator, id_extractor
 from backend.transform.parser import Parser
 from backend.extract.twitter import Twitter
-import nest_asyncio
 import asyncio
+import logging
 
 
 @app_views.route('/tweets', methods=['GET'], strict_slashes=False)
@@ -63,25 +63,16 @@ def create_tweet():
         merged_tweet_replies = tweet_parser.merge_tweet_replies(
             parsed_tweet, parsed_replies)
     except Exception as e:
+        logging.error(f"Exception occurred: {str(e)}")
         abort(500, description=str(e))
 
     roberta = InferenceAPI()
 
-    tweet_results = nest_asyncio.run(
-        roberta.query(merged_tweet_replies['tweet_text']))
-    merged_tweet_replies['tweet_sentiment'] = tweet_results
-
-    tasks = [roberta.query(reply['reply_text'])
-             for reply in merged_tweet_replies['combined_replies']]
-
-    # Await the results of the tasks
-    results = nest_asyncio(asyncio.gather(*tasks))
-    for i in range(len(results)):
-        merged_tweet_replies['combined_replies'][i]['sentiment'] = results[i]
-
+    response = asyncio.run(roberta.get_result(
+        merged_tweet_replies))
     if storage.is_storage_empty():
-        storage.save_and_overwrite(merged_tweet_replies)
+        storage.save_and_overwrite(response)
     else:
-        storage.append(merged_tweet_replies, id)
+        storage.append(response, id)
 
-    return jsonify(merged_tweet_replies)
+    return Response(response=response, status=201, mimetype='application/json')
