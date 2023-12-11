@@ -58,9 +58,9 @@ class Parser:
         """Merge tweet data and replies data into one object"""
         if tweet_data is None or replies_data is None:
             raise Exception('Tweet or replies is None')
-        for reply in replies_data['combined_replies']:
-            if reply['reply_to_tweet_id'] != tweet_data['tweet_id']:
-                raise Exception('Tweet and replies are not related')
+        # for reply in replies_data['combined_replies']:
+        #     if reply['reply_to_tweet_id'] != tweet_data['tweet_id']:
+        #         raise Exception('Tweet and replies are not related')
 
         merged_data = tweet_data.copy()
         merged_data['replies_count'] = replies_data['replies_count']
