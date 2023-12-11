@@ -1,7 +1,9 @@
-from flask import Flask, make_response, jsonify
+from backend.api.v1.views import app_views
+from flask import Flask, make_response, jsonify, make_response
 from flask_cors import CORS
 from flasgger import Swagger
-from backend.api.v1.views import app_views
+import asyncio
+
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
@@ -27,5 +29,6 @@ app.config['SWAGGER'] = {
 
 Swagger(app)
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)
+
+if __name__ == '__main__':
+    asyncio.run(app.run(host='0.0.0.0', port=5000, threaded=True))
