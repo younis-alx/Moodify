@@ -166,34 +166,6 @@
         "replies_count": 11,
         "combined_replies": [
             {
-                "tweet_id": "1731279474992283749",
-                "created_at": "Sun Dec 03 11:49:27 +0000 2023",
-                "reply_text": "@freemonotheist \u0648\u064e\u0641\u0650\u064a \u0627\u0644\u0652\u0623\u064e\u0631\u0652\u0636\u0650 \u0622\u064a\u064e\u0627\u062a\u064c \u0644\u0650\u0651\u0644\u0652\u0645\u064f\u0648\u0642\u0650\u0646\u0650\u064a\u0646\u064e \ufd3f\u0662\u0660\ufd3e\n \u0648\u064e\u0641\u0650\u064a \u0623\u064e\u0646\u0641\u064f\u0633\u0650\u0643\u064f\u0645\u0652 \u06da \u0623\u064e\u0641\u064e\u0644\u064e\u0627 \u062a\u064f\u0628\u0652\u0635\u0650\u0631\u064f\u0648\u0646\u064e \ufd3f\u0662\u0661\ufd3e\n\nAnd on the earth are signs for the certain [in faith] (51:20) And in yourselves. Then will you not see? (51:21)",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1731003302693728422",
-                "user_replies": {
-                    "user_id": "1021664176639492096",
-                    "user_name": "Korhall",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1720353474964013056/PMAe7jkX_normal.jpg",
-                    "location": "London, England"
-                }
-            },
-            {
-                "tweet_id": "1731036411204079688",
-                "created_at": "Sat Dec 02 19:43:36 +0000 2023",
-                "reply_text": "@freemonotheist Show me you don't understand evolution without telling me you don't understand evolution",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1731003302693728422",
-                "user_replies": {
-                    "user_id": "1161189168183201792",
-                    "user_name": "AaIsrael",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1161189345132515329/PMZPbsUW_normal.jpg",
-                    "location": ""
-                }
-            },
-            {
                 "tweet_id": "1731011278624186554",
                 "created_at": "Sat Dec 02 18:03:44 +0000 2023",
                 "reply_text": "@freemonotheist Humans weren't created by God or by random chance.\n\nWe evolved through natural selection -- and evolution can do incredible things.\n\nHere's Harvard's Mega Petri Dish showing bacteria evolve 1000x greater resistance to an antibiotic in just 11 days: https://t.co/a7XF4kCsYJ",
@@ -207,49 +179,53 @@
                     "user_name": "SDL",
                     "user_profile_image": "https://pbs.twimg.com/profile_images/1114213594097422337/An-MxMzN_normal.png",
                     "location": "any/all"
-                }
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.4538528621196747
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.40584075450897217
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.14030633866786957
+                        }
+                    ]
+                ]
             },
             {
-                "tweet_id": "1731003686770368616",
-                "created_at": "Sat Dec 02 17:33:34 +0000 2023",
-                "reply_text": "@freemonotheist Atheist logic=CAOS",
+                "tweet_id": "1731036411204079688",
+                "created_at": "Sat Dec 02 19:43:36 +0000 2023",
+                "reply_text": "@freemonotheist Show me you don't understand evolution without telling me you don't understand evolution",
                 "video_url": null,
                 "media_url": null,
                 "reply_to_tweet_id": "1731003302693728422",
                 "user_replies": {
-                    "user_id": "4724419156",
-                    "user_name": "EAGLE",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1623389659987320832/6kwb_1xA_normal.jpg",
-                    "location": "Tropoj"
-                }
-            },
-            {
-                "tweet_id": "1731014412721434722",
-                "created_at": "Sat Dec 02 18:16:11 +0000 2023",
-                "reply_text": "@freemonotheist \u0641\u062a\u0628\u0627\u0631\u0643 \u0627\u0644\u0644\u0647 \u0627\u062d\u0633\u0646 \u0627\u0644\u062e\u0627\u0644\u0642\u064a\u0646",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1731003302693728422",
-                "user_replies": {
-                    "user_id": "1212820758",
-                    "user_name": "Umar Matovu",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1243975339166089217/-mB1j0jd_normal.jpg",
-                    "location": "Johannesburg, South Africa"
-                }
-            },
-            {
-                "tweet_id": "1712017693010694416",
-                "created_at": "Wed Oct 11 08:10:00 +0000 2023",
-                "reply_text": "Suunnittelimme ja toteutimme Hollolan kunnan uudistetun verkkopalvelun.\n\nSivusto toteutettiin multisitena, ja p\u00e4\u00e4sivuston ohella kehitettiin my\u00f6s P\u00e4ij\u00e4t-H\u00e4meen ymp\u00e4rist\u00f6terveyden sivusto.\n\nSivuston saavutettavuus ja k\u00e4ytett\u00e4vyys auditoitiin. Sivuston saavutettavuus on AA-tasoa.",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1712017693010694416",
-                "user_replies": {
-                    "user_id": "167892390",
-                    "user_name": "redandblue",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/886421737457319936/tD8yw4kB_normal.jpg",
-                    "location": "Helsinki / Finland"
-                }
+                    "user_id": "1161189168183201792",
+                    "user_name": "AaIsrael",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1161189345132515329/PMZPbsUW_normal.jpg",
+                    "location": ""
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Negative",
+                            "score": 0.7803702354431152
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.18396668136119843
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.035663072019815445
+                        }
+                    ]
+                ]
             },
             {
                 "tweet_id": "1731005117141536817",
@@ -263,49 +239,83 @@
                     "user_name": "Irum Chauhdry",
                     "user_profile_image": "https://pbs.twimg.com/profile_images/1709918984487768065/RROvmczk_normal.jpg",
                     "location": "Pakistan"
-                }
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.7145406007766724
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.19064007699489594
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.09481929987668991
+                        }
+                    ]
+                ]
             },
             {
-                "tweet_id": "1731041985144742269",
-                "created_at": "Sat Dec 02 20:05:45 +0000 2023",
-                "reply_text": "@freemonotheist Someone needs to educate this guy about evolution.",
+                "tweet_id": "1730441054829375742",
+                "created_at": "Fri Dec 01 04:17:52 +0000 2023",
+                "reply_text": "Reynalda Kaitlyn",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1730441054829375742",
+                "user_replies": {
+                    "user_id": "1716607276763504640",
+                    "user_name": "Reynalda Kaitlyn",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1727964045406511105/UeaXfjWH_normal.jpg",
+                    "location": ""
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7543503046035767
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.13109873235225677
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.11455094069242477
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731279474992283749",
+                "created_at": "Sun Dec 03 11:49:27 +0000 2023",
+                "reply_text": "@freemonotheist \u0648\u064e\u0641\u0650\u064a \u0627\u0644\u0652\u0623\u064e\u0631\u0652\u0636\u0650 \u0622\u064a\u064e\u0627\u062a\u064c \u0644\u0650\u0651\u0644\u0652\u0645\u064f\u0648\u0642\u0650\u0646\u0650\u064a\u0646\u064e \ufd3f\u0662\u0660\ufd3e\n \u0648\u064e\u0641\u0650\u064a \u0623\u064e\u0646\u0641\u064f\u0633\u0650\u0643\u064f\u0645\u0652 \u06da \u0623\u064e\u0641\u064e\u0644\u064e\u0627 \u062a\u064f\u0628\u0652\u0635\u0650\u0631\u064f\u0648\u0646\u064e \ufd3f\u0662\u0661\ufd3e\n\nAnd on the earth are signs for the certain [in faith] (51:20) And in yourselves. Then will you not see? (51:21)",
                 "video_url": null,
                 "media_url": null,
                 "reply_to_tweet_id": "1731003302693728422",
                 "user_replies": {
-                    "user_id": "823701043",
-                    "user_name": "Ewan Middlebin",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1724816205016358912/SIE_qtWC_normal.jpg",
-                    "location": "Player#getLocation()"
-                }
-            },
-            {
-                "tweet_id": "1731007335223456070",
-                "created_at": "Sat Dec 02 17:48:03 +0000 2023",
-                "reply_text": "@freemonotheist LOL",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1731003302693728422",
-                "user_replies": {
-                    "user_id": "1161625958341890048",
-                    "user_name": "JoKeR \ud83e\udd21",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1722189264824221696/Tn_2WhPZ_normal.jpg",
-                    "location": "UNITED ARAB EMIRATES"
-                }
-            },
-            {
-                "tweet_id": "1731052349303501196",
-                "created_at": "Sat Dec 02 20:46:56 +0000 2023",
-                "reply_text": "@freemonotheist Ma ShALLAH",
-                "video_url": null,
-                "media_url": null,
-                "reply_to_tweet_id": "1731003302693728422",
-                "user_replies": {
-                    "user_id": "1347493410781982725",
-                    "user_name": "Shelly",
-                    "user_profile_image": "https://pbs.twimg.com/profile_images/1691496072424865793/FCuahxAF_normal.jpg",
-                    "location": "Pakistan"
-                }
+                    "user_id": "1021664176639492096",
+                    "user_name": "Korhall",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1720353474964013056/PMAe7jkX_normal.jpg",
+                    "location": "London, England"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.5859634876251221
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.23570862412452698
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.17832784354686737
+                        }
+                    ]
+                ]
             },
             {
                 "tweet_id": "1731052370019111272",
@@ -319,8 +329,190 @@
                     "user_name": "Shelly",
                     "user_profile_image": "https://pbs.twimg.com/profile_images/1691496072424865793/FCuahxAF_normal.jpg",
                     "location": "Pakistan"
-                }
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.38556891679763794
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.3200107216835022
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.2944203317165375
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731007335223456070",
+                "created_at": "Sat Dec 02 17:48:03 +0000 2023",
+                "reply_text": "@freemonotheist LOL",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1731003302693728422",
+                "user_replies": {
+                    "user_id": "1161625958341890048",
+                    "user_name": "JoKeR \ud83e\udd21",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1722189264824221696/Tn_2WhPZ_normal.jpg",
+                    "location": "UNITED ARAB EMIRATES"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.39832377433776855
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.3865765333175659
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.21509966254234314
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731014412721434722",
+                "created_at": "Sat Dec 02 18:16:11 +0000 2023",
+                "reply_text": "@freemonotheist \u0641\u062a\u0628\u0627\u0631\u0643 \u0627\u0644\u0644\u0647 \u0627\u062d\u0633\u0646 \u0627\u0644\u062e\u0627\u0644\u0642\u064a\u0646",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1731003302693728422",
+                "user_replies": {
+                    "user_id": "1212820758",
+                    "user_name": "Umar Matovu",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1243975339166089217/-mB1j0jd_normal.jpg",
+                    "location": "Johannesburg, South Africa"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.8449755311012268
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.11900410801172256
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.03602032735943794
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731052349303501196",
+                "created_at": "Sat Dec 02 20:46:56 +0000 2023",
+                "reply_text": "@freemonotheist Ma ShALLAH",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1731003302693728422",
+                "user_replies": {
+                    "user_id": "1347493410781982725",
+                    "user_name": "Shelly",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1691496072424865793/FCuahxAF_normal.jpg",
+                    "location": "Pakistan"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Negative",
+                            "score": 0.4473859369754791
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.352082759141922
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.20053133368492126
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731003686770368616",
+                "created_at": "Sat Dec 02 17:33:34 +0000 2023",
+                "reply_text": "@freemonotheist Atheist logic=CAOS",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1731003302693728422",
+                "user_replies": {
+                    "user_id": "4724419156",
+                    "user_name": "EAGLE",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1623389659987320832/6kwb_1xA_normal.jpg",
+                    "location": "Tropoj"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Negative",
+                            "score": 0.7554910778999329
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.21987222135066986
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.02463672310113907
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1731135230566613351",
+                "created_at": "Sun Dec 03 02:16:16 +0000 2023",
+                "reply_text": "@freemonotheist \u201cEvolution\u201d they might say",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1731003302693728422",
+                "user_replies": {
+                    "user_id": "1515355666394894337",
+                    "user_name": "\ud80c\udc86 | \u062b\u064e\u0627\u0626\u0650\u0631",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1707545583014019073/RMKY5W-G_normal.jpg",
+                    "location": "Toronto, Ontario"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.5653184056282043
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.3687332570552826
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.06594832241535187
+                        }
+                    ]
+                ]
             }
+        ],
+        "tweet_sentiment": [
+            [
+                {
+                    "label": "Neutral",
+                    "score": 0.5198638439178467
+                },
+                {
+                    "label": "Negative",
+                    "score": 0.42262086272239685
+                },
+                {
+                    "label": "Positive",
+                    "score": 0.05751528963446617
+                }
+            ]
         ]
     }
 }
