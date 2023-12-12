@@ -3,3 +3,12 @@ moodify-env/
 __pycache__/
 Pipfile*
 .vscode/
+twitter_scraper.egg-info/
+replies.json
+tweet.json
+scraperai.ipynb
+scrapfly_tweet.py
+snscrape_tweets.py
+twitter_scrape.py
+main.py
+*.json
