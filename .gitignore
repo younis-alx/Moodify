@@ -11,4 +11,4 @@ scrapfly_tweet.py
 snscrape_tweets.py
 twitter_scrape.py
 main.py
-*.json
+storage.json
