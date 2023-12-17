@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 1rem;
+    backdrop-filter: blur(15px); /* this will give the translucent effect */
+    position: sticky;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    top: 0;
+    font-family: 'Varela Round', sans-serif;
+    animation: apprear 3s both;
+}
+
+.navbar-brand {
+    background-image: url("/logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+@keyframes apprear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand .navbar-items {
+    display: flex;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.navbar-item {
+    margin-left: 2rem;
+    padding-top: 1rem;
+}
+
+.navbar-items {
+    display: flex;
+}
