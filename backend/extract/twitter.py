@@ -39,9 +39,9 @@ class Twitter:
 
     def get_tweet_replies(self, tweet_id):
         """Returns the replies of the tweet with the given tweet ID"""
-        if len(tweet_id) != 19:
-            raise ValueError('Tweet ID must be 19 characters long')
-        elif tweet_id is None:
+        # if len(tweet_id) != 19:
+        #     raise ValueError('Tweet ID must be 19 characters long')
+        if tweet_id is None:
             raise ValueError('Tweet ID cannot be None')
         # elif limit is None:
         #     raise ValueError('Limit cannot be None')
@@ -60,6 +60,8 @@ class Twitter:
         response = requests.get(url, headers=headers, params=querystring)
         if response.status_code == 200:
             return response.json()
+        else:
+            print(response.status_code, response.json())
         return None
 
     def get_tweet_replies_continuation(self, tweet_id, continue_token, limit=2):
@@ -195,8 +197,8 @@ class Twitter:
 
 if __name__ == '__main__':
     twitter = Twitter()
-    res = twitter.get_tweet_replies('1729675112')
-    # res.parse()
+    res = twitter.get_tweet_replies('1735807255159947747')
+    print(res)
     with open('replies.json', 'w+') as f:
         json.dump(res, f, indent=4)
     # twitter.get_tweet('123456789')

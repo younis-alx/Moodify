@@ -1,0 +1,50 @@
+#root {
+  overflow-x: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-height: inherit;
+  min-width: 100vw;
+  /* background-image: radial-gradient( circle farthest-corner at 5% 5%,  rgb(138, 50, 18) 0%,rgb(135, 105, 18), rgb(2, 11, 71) 70% ); */
+  background-image: url("../background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* .logo:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+/* 
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
