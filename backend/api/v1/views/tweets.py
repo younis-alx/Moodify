@@ -75,4 +75,5 @@ def create_tweet():
     else:
         storage.append(response, id)
 
-    return Response(response=response, status=201, mimetype='application/json')
+    # return Response(response=response, status=201, mimetype='application/json')
+    return jsonify(storage.load_tweet(id))
