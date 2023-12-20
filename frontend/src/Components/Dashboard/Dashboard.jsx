@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-
+import { useEffect, useState } from "react";
 import {
     Card,
     Grid,
@@ -11,39 +11,28 @@ import {
     Text,
     Title,
     DonutChart,
-    Flex
+    Flex,
 } from "@tremor/react";
+import { sentimentCount, SimpleCharts } from './helper';
+import SalesPeopleTable from "./Table";
+import SummaryTable from "./summary";
 
-const sentimentCount = (all_sentiment) => {
-    let positive = 0;
-    let negative = 0;
-    let neutral = 0;
 
-    all_sentiment.flat().forEach((item) => {
-        const highestScoreItem = item.reduce((prev, current) => (prev.score >= current.score) ? prev : current);
-
-        if (highestScoreItem.label === 'Positive') {
-            positive++;
-        } else if (highestScoreItem.label === 'Negative') {
-            negative++;
-        } else if (highestScoreItem.label === 'Neutral') {
-            neutral++;
-        }
-    });
-
-    return { positive, negative, neutral };
-};
-
-      
 export default function Dashboard() {
     const location = useLocation();
     const data = location.state?.data;
-    let all_sentiment;
+    let all_sentiment = [];
     if (data?.combined_replies) {
         all_sentiment = data.combined_replies.map((item) => item.sentiment);
     }
+
+    useEffect(() => {
+        if (data?.combined_replies) {
+            all_sentiment = data.combined_replies.map((item) => item.sentiment);
+        }
+    }, [data]);
     
-    console.log(JSON.stringify(data.combined_replies, null, 2)) // TODO: create the second tab from using created_at at x-axis and sentiment score at y-axis :)
+    // console.log(JSON.stringify(areaChartData, null, 2));
   return (
     <>
         <main className="p-12 appear">
@@ -52,13 +41,13 @@ export default function Dashboard() {
 
         <TabGroup className="mt-6">
             <TabList>
-            <Tab>Overview</Tab>
-            <Tab>Detail</Tab>
+                <Tab>Overview</Tab>
+                <Tab>Detail</Tab>
             </TabList>
             <TabPanels>
-            <TabPanel>
-                <Grid numItemsMd={2} numItemsLg={2} className="gap-6 mt-6">
-                <Card className="max-w-lg mx-auto">
+            <TabPanel >
+                <Grid  numItemsMd={2} numItemsLg={2} className="gap-4 mt-4 justify-center max-w-[64rem] mx-auto">
+                <Card className="max-w-lg mx-auto ">
                     <div className="h-27">
                     <Title className="text-center">Sentiment Pie Overview</Title>
                     </div>
@@ -78,23 +67,33 @@ export default function Dashboard() {
                         
                         colors={["cyan",  "slate", "red"]}
                     />
+                    <Text className="text-center mt-6">Total Tweets: {data?.combined_replies.length}</Text>
+                    <Flex className="justify-center gap-6">
+                    <Title className="text-center mt-6">Positive: {Math.floor((sentimentCount(all_sentiment).positive/data?.replies_count) * 100)}%</Title>
+                    <Title className="text-center mt-6">Neutral: {Math.floor((sentimentCount(all_sentiment).neutral/data?.replies_count) * 100)}%</Title>
+                    <Title className="text-center mt-6">Negative: {Math.floor((sentimentCount(all_sentiment).negative/data?.replies_count) * 100)}%</Title>
+                    </Flex>
                 </Card>
-                <Card>
-                    {/* Placeholder to set height */}
-                    <div className="h-28" />
+                <Card className="max-w-lg mx-auto">
+                    <div className="h-27" >
+                    <Title className="text-center">Sentiment Area Overview</Title>
+                    </div>
+                    <SimpleCharts all_sentiment={all_sentiment} combined_replies={data.combined_replies}/>
                 </Card>
 
                 </Grid>
-                <div className="mt-6">
-                <Card>
-                    <div className="h-80" />
+                <div className="mt-4">
+                <Card className="max-w-[64rem] mx-auto">
+                    <SummaryTable combined_replies={data?.combined_replies}/>
+                    <div className="h-75" />
                 </Card>
                 </div>
             </TabPanel>
             <TabPanel>
                 <div className="mt-6">
                 <Card>
-                    <div className="h-96" />
+                    <SalesPeopleTable combined_replies={data?.combined_replies}/>
+                    <div className="h-95" />
                 </Card>
                 </div>
             </TabPanel>
