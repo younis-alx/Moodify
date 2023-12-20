@@ -514,5 +514,307 @@
                 }
             ]
         ]
+    },
+    "1737089153236443190": {
+        "tweet_id": "1737089153236443190",
+        "video_url": null,
+        "tweet_text": "6 Load Balancing Algorithms\n\n1 - Round Robin - Distributes requests evenly in a circular order among servers - ensuring fair allocation of work.\n\n2 - Sticky Round Robin - Persists user requests to the same server for a set duration - promoting session consistency.\n\n3 - Least Time - Routes requests to the server with the shortest expected processing time - minimizing overall response time.\n\n4 - Least Connections - Sends requests to the server with the fewest active connections - balancing load dynamically.\n\n5 - IP/URL Hash - Uses a hash function on client IP/URL to determine server assignment - maintaining consistency for the same client.\n\n6 - Weighted Round Robin - Assigns requests based on server weights, accommodating different capacities - allowing for proportional load distribution\n\n\ud83d\udc4d\ud83c\udfff Subscribe to our newsletter - https://t.co/hxARDoA98l",
+        "created_at": "Tue Dec 19 12:35:02 +0000 2023",
+        "user_tweet": {
+            "user_id": "952618432482238466",
+            "user_name": "Nelson Djalo | Amigoscode",
+            "user_profile_image": "https://pbs.twimg.com/profile_images/1617816221478445057/gS2qRHat_normal.jpg"
+        },
+        "replies_count": 9,
+        "combined_replies": [
+            {
+                "tweet_id": "1737209089044709495",
+                "created_at": "Tue Dec 19 20:31:37 +0000 2023",
+                "reply_text": "@AmigosCode Sometime's it's good to credit the people you steal your material from.\n\n@alexxubyte https://t.co/DqMo8nWpu8",
+                "video_url": null,
+                "media_url": [
+                    "https://pbs.twimg.com/media/GBvOSg0XkAAplsn.png"
+                ],
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "162715346",
+                    "user_name": "Cameron McKenzie | Docker | GitHub | AWS | Java",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1571929504188178438/RBWFS2w4_normal.jpg",
+                    "location": "Toronto, ON"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.6536920666694641
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.2786499559879303
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.0676579549908638
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737280955302461526",
+                "created_at": "Wed Dec 20 01:17:11 +0000 2023",
+                "reply_text": "@AmigosCode @readwise save",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "1590701109462503425",
+                    "user_name": "\u6881\u744b\u73b2",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1736373487827374080/E3O57p6-_normal.jpg",
+                    "location": "Taoyuan County, Taiwan"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7735318541526794
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.13773474097251892
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.08873333781957626
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1734460575273697486",
+                "created_at": "Tue Dec 12 06:30:00 +0000 2023",
+                "reply_text": "\u2757 Tupakka- ja nikotiinituotteiden k\u00e4yt\u00f6n lopettamista ei tarvitse katua. Vieroituspalvelut voivat auttaa ratkaisevasti nikotiiniriippuvuudesta eroon pyrkiv\u00e4\u00e4. Tietoa palveluista \u2b07\ufe0f",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1734460575273697486",
+                "user_replies": {
+                    "user_id": "40206265",
+                    "user_name": "Suomen ASH \ud83c\uddfa\ud83c\udde6",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/687234271673741312/R9jC1VDr_normal.png",
+                    "location": "Helsinki, Finland"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Positive",
+                            "score": 0.5649821758270264
+                        },
+                        {
+                            "label": "Neutral",
+                            "score": 0.35021883249282837
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.08479896187782288
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737099844148424953",
+                "created_at": "Tue Dec 19 13:17:31 +0000 2023",
+                "reply_text": "@AmigosCode You\u2019ve covered the most commonly used load-balancing algorithms quite well! Here\u2019s one more you might find interesting:\n\n7 - Random: This algorithm randomly selects a server from the pool for each incoming client request. While it doesn\u2019t consider server load or session\u2026",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "119470963",
+                    "user_name": "Simform",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1609822323988889601/XIwaJxX6_normal.jpg",
+                    "location": "Florida, USA"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.5041720867156982
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.3856857717037201
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.11014212667942047
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737108376449110211",
+                "created_at": "Tue Dec 19 13:51:25 +0000 2023",
+                "reply_text": "@AmigosCode @Memdotai mem it",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "274842691",
+                    "user_name": "wwwwg",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1692679091630071808/BXS7PEoP_normal.jpg",
+                    "location": ""
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.6972745656967163
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.1767953634262085
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.1259300410747528
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737108753441599560",
+                "created_at": "Tue Dec 19 13:52:55 +0000 2023",
+                "reply_text": "@Mynamestillisi1 @AmigosCode Saved! Here's the compiled thread: https://t.co/t37eRuZRtl\n\n\ud83e\ude84 AI-generated summary:\n\n\"This thread outlines 6 different load balancing algorithms, including Round Robin, Sticky Round Robin, Least Time, Least Connections, Weighted Round Robin, and Weighted Least...",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "1316495843621511168",
+                    "user_name": "Mem",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1343666213067530240/3mLsB1kf_normal.jpg",
+                    "location": "San Francisco, CA"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7792249917984009
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.16819587349891663
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.05257910490036011
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737168197022069216",
+                "created_at": "Tue Dec 19 17:49:07 +0000 2023",
+                "reply_text": "@AmigosCode R",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "1188716105726124032",
+                    "user_name": "sleepydev",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1560335799798734848/sSscYnQM_normal.jpg",
+                    "location": "Bugsville"
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7939288020133972
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.11747331917285919
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.08859780430793762
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737177497937039866",
+                "created_at": "Tue Dec 19 18:26:05 +0000 2023",
+                "reply_text": "@AmigosCode how",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "3537691458",
+                    "user_name": "Adnan Haque Rezvi",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/642678394820276226/iHvC8itI_normal.jpg",
+                    "location": ""
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7134968638420105
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.15389518439769745
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.13260799646377563
+                        }
+                    ]
+                ]
+            },
+            {
+                "tweet_id": "1737122978318475314",
+                "created_at": "Tue Dec 19 14:49:26 +0000 2023",
+                "reply_text": "@AmigosCode Which tool you used to create visualisation like this?",
+                "video_url": null,
+                "media_url": null,
+                "reply_to_tweet_id": "1737089153236443190",
+                "user_replies": {
+                    "user_id": "191951266",
+                    "user_name": "\u0627\u0631\u0634\u0627\u062f",
+                    "user_profile_image": "https://pbs.twimg.com/profile_images/1599822957660241925/ZXSp0NQz_normal.jpg",
+                    "location": "Chennai "
+                },
+                "sentiment": [
+                    [
+                        {
+                            "label": "Neutral",
+                            "score": 0.7011889219284058
+                        },
+                        {
+                            "label": "Positive",
+                            "score": 0.2607063949108124
+                        },
+                        {
+                            "label": "Negative",
+                            "score": 0.038104649633169174
+                        }
+                    ]
+                ]
+            }
+        ],
+        "tweet_sentiment": [
+            [
+                {
+                    "label": "Neutral",
+                    "score": 0.713537335395813
+                },
+                {
+                    "label": "Positive",
+                    "score": 0.17303527891635895
+                },
+                {
+                    "label": "Negative",
+                    "score": 0.11342737078666687
+                }
+            ]
+        ]
     }
 }
