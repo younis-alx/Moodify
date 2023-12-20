@@ -2,7 +2,7 @@
     The API keys are stored in a .env file in the root directory of the project
     The .env file should have the following format:
     [ENV_USAGE]:
-        X-API-KEY="API_KEY_1,API_KEY_2,API_KEY_3"
+        X_API_KEY="API_KEY_1,API_KEY_2,API_KEY_3"
 """
 import os
 import dotenv
@@ -13,7 +13,7 @@ class APIKeyManager:
     def __init__(self):
         # Load the .env file
         dotenv.load_dotenv()
-        self.api_keys = itertools.cycle(os.getenv('X-API-KEY').split(','))
+        self.api_keys = itertools.cycle(os.getenv('X_API_KEY').split(','))
 
     def get_next_api_key(self):
         """Returns the next API key in the list"""""
@@ -21,9 +21,9 @@ class APIKeyManager:
     @property
     def reset_api_keys(self):
         """Resets the API keys to the first one in the list"""""
-        self.api_keys = itertools.cycle(os.getenv('X-API-KEY').split(','))
+        self.api_keys = itertools.cycle(os.getenv('X_API_KEY').split(','))
     
-    def append_api_key(self, file_path, new_value, env_var='X-API-KEY'):
+    def append_api_key(self, file_path, new_value, env_var='X_API_KEY'):
         """Appends the given API key to the list of API keys"""""
         
         # Check if the API key is already in the list
