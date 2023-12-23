@@ -35,7 +35,7 @@ function Home(){
             setError('Please enter a valid URL');
             return;
         }
-        const response = await fetch(`http://127.0.0.1:5000/api/v1/tweets/`, {
+        const response = await fetch(`https://moodify-lpt3.onrender.com/api/v1/tweets/api/v1/tweets/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
