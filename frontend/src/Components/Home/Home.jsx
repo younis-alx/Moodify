@@ -51,7 +51,7 @@ function Home(){
             const data = await response.json();
             navigate('/dashboard', { state: { data: data } });
         } else {
-            console.log(response.json() + ' ' + contentType);
+            console.log(await response.json() + ' ' + contentType);
             setError('Received unexpected data from server.');
         }
     }
