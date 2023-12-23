@@ -140,8 +140,8 @@ Installing and setting up clone.
 4. Enter your API in `.env` Note: apikey uses a rotater class to rotate between apikeys, **Can be used with one apikey.**
    ```python
   
-    X-API-KEY="apikey1,apikey2"
-    X-API-HOST='host'
+    X_API_KEY="apikey1,apikey2"
+    X_API_HOST='host'
     THRESHOLD=0.3
     HUGGINGFACE_API_KEY=''
    ```

@@ -14,7 +14,7 @@ class Twitter:
     def __init__(self):
         dotenv.load_dotenv()
         self.api_key = APIKeyManager()
-        self.api_host = os.getenv('X-API-HOST')
+        self.api_host = os.getenv('X_API_HOST')
 
     def get_tweet(self, tweet_id):
         """Returns the tweet details with the given tweet ID"""
