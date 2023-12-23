@@ -29,4 +29,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
+  build: {
+    outDir: 'build',
+    assetsDir: 'assets',
+    sourcemap: true,
+  }
 })
