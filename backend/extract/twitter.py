@@ -7,7 +7,7 @@ import requests
 import os
 import dotenv
 import json
-from backend.extract.API_key_manager import APIKeyManager
+from extract.API_key_manager import APIKeyManager
 
 
 class Twitter:

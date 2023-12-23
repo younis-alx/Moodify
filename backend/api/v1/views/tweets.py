@@ -1,11 +1,11 @@
-from backend.load import storage
-from backend.api.v1.views import app_views
+from load import storage
+from api.v1.views import app_views
 from flask import jsonify, request, abort, Response
 from flasgger.utils import swag_from
-from backend.sentiment_analysis.v1.tweetnlp import InferenceAPI
-from backend.extract.URL_validator import url_validator, id_extractor
-from backend.transform.parser import Parser
-from backend.extract.twitter import Twitter
+from sentiment_analysis.v1.tweetnlp import InferenceAPI
+from extract.URL_validator import url_validator, id_extractor
+from transform.parser import Parser
+from extract.twitter import Twitter
 import asyncio
 import logging
 
