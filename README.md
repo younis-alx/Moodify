@@ -30,7 +30,7 @@
 
   <h3 align="center">Moodify</h3>
 
-  <p align="center">Moodify is an application to perform sentiment analysis on a given text to estimate the mood of the text using natural language processing (    NLP) technique used to determine the sentiment or emotional tone expressed in a piece of text. It involves analyzing text data to identify       and categorize the sentiment as positive, negative, or neutral. </p>
+  <p align="center">Moodify is an application to perform sentiment analysis on a given tweet/replies to estimate the mood of the text using natural language processing (NLP) technique used to determine the sentiment or emotional tone expressed in a piece of text. It involves scraping tweet and replies, analyzing text data to identify and categorize the sentiment as positive, negative, or neutral. </p>
 </div>
 
 
