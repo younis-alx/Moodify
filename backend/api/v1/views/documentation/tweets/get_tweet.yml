@@ -1,0 +1,83 @@
+gets tweet by id
+---
+tags:
+  - tweets
+parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
+responses:
+  200:
+    description: request executed successfully
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        data:
+          type: object
+          properties:
+            tweet_id:
+              type: integer
+              example: 1
+            video_url:
+              type: string
+              example: "https://www.youtube.com/watch?v=1234567890"
+            tweet_text:
+              type: string
+              example: "Hello World"
+            created_at:
+              type: string
+              example: "2021-09-01T00:00:00.000Z"
+            user_tweet:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  example: 1
+                user_name:
+                  type: string
+                  example: "John Doe"
+                user_profile_picture:
+                  type: string
+                  example: "https://www.google.com"
+            replies_count:
+              type: integer
+              example: 1
+            combined_replies:
+              type: array
+              items:
+                type: object
+                properties:
+                  reply_id:
+                    type: integer
+                    example: 1
+                  reply_text:
+                    type: string
+                    example: "Hello World"
+                  created_at:
+                    type: string
+                    example: "2021-09-01T00:00:00.000Z"
+                  media_url:
+                    type: string
+                    example: "https://www.google.com"
+                  reply_to_tweet_id:
+                    type: integer
+                    example: 1
+                  user_reply:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                        example: 1
+                      user_name:
+                        type: string
+                        example: "John Doe"
+                      user_profile_picture:
+                        type: string
+                        example: "https://www.google.com"
+                      location:
+                        type: string
+                        example: "Lagos, Nigeria"
