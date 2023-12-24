@@ -31,7 +31,7 @@ def get_tweet(tweet_id):
     return jsonify(tweet)
 
 
-@app_views.route('/tweets', methods=['GET'], strict_slashes=False)
+@app_views.route('/tweets', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/tweets/create_tweet.yml', methods=['POST'])
 def create_tweet():
     """ Creates a Tweet """
