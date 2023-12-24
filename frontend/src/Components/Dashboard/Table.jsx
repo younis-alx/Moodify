@@ -91,7 +91,7 @@ export default function SalesPeopleTable({ combined_replies }) {
                     <TableHeaderCell>Name</TableHeaderCell>
                     <TableHeaderCell className="text-right">Positive Score(%)</TableHeaderCell>
                     <TableHeaderCell className="text-right">Negative Score(%)</TableHeaderCell>
-                    <TableHeaderCell className="text-right">Neutral Score ($)</TableHeaderCell>
+                    <TableHeaderCell className="text-right">Neutral Score (%)</TableHeaderCell>
                     <TableHeaderCell className="text-right">Location</TableHeaderCell>
                     <TableHeaderCell className="text-right">Text</TableHeaderCell>
                     <TableHeaderCell className="text-right">Status</TableHeaderCell>
