@@ -35,9 +35,7 @@ def get_tweet(tweet_id):
 @swag_from('documentation/tweets/create_tweet.yml', methods=['POST'])
 def create_tweet():
     """ Creates a Tweet """
-    if request.method == 'OPTIONS':
-        # Preflight request. Reply successfully:
-        return Response(status=200)
+
     twitter = Twitter()
 
     data = request.get_json()
