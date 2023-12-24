@@ -31,10 +31,13 @@ def get_tweet(tweet_id):
     return jsonify(tweet)
 
 
-@app_views.route('/tweets', methods=['POST'], strict_slashes=False)
+@app_views.route('/tweets', methods=['GET', 'OPTIONS'], strict_slashes=False)
 @swag_from('documentation/tweets/create_tweet.yml', methods=['POST'])
 def create_tweet():
     """ Creates a Tweet """
+    if request.method == 'OPTIONS':
+        # Preflight request. Reply successfully:
+        return Response(status=200)
     twitter = Twitter()
 
     data = request.get_json()
