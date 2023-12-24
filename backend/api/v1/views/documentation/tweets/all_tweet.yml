@@ -1,0 +1,48 @@
+gets all amenities of a place
+---
+tags:
+  - tweets
+responses:
+  200:
+    description: request executed successfully
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 1
+              user_id:
+                type: integer
+                example: 1
+              text:
+                type: string
+                example: "Hello World"
+              created_at:
+                type: string
+                example: "2021-09-01T00:00:00.000Z"
+              updated_at:
+                type: string
+                example: "2021-09-01T00:00:00.000Z"
+              user:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: "John Doe"
+                  username:
+                    type: string
+                    example: "johndoe"
+                  email:
+                    type: string
+                    example: "
