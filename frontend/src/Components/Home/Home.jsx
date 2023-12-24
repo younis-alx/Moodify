@@ -35,7 +35,7 @@ function Home(){
             setError('Please enter a valid URL');
             return;
         }
-        const response = await fetch(process.env.FRONT_API, {
+        const response = await fetch(import.meta.env.VITE_FRONT_API, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,7 +51,6 @@ function Home(){
             const data = await response.json();
             navigate('/dashboard', { state: { data: data } });
         } else {
-            console.log(await response.json() + ' ' + contentType);
             setError('Received unexpected data from server.');
         }
     }
