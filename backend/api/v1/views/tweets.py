@@ -1,6 +1,6 @@
 from load import storage
 from api.v1.views import app_views
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort
 from flasgger.utils import swag_from
 from sentiment_analysis.v1.tweetnlp import InferenceAPI
 from extract.URL_validator import url_validator, id_extractor
