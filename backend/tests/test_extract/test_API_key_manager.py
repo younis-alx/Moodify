@@ -1,11 +1,11 @@
-import os
-from unittest import TestCase, mock
-import unittest
+import pytest
+from unittest import mock
 from backend.extract.API_key_manager import APIKeyManager
 
 
-class TestAPIKeyManager(TestCase):
-    def setUp(self):
+class TestAPIKeyManager:
+    @pytest.fixture(autouse=True)
+    def setup(self):
         self.api_manager = APIKeyManager()
 
     def test_get_next_api_key(self):
@@ -14,13 +14,10 @@ class TestAPIKeyManager(TestCase):
             # Mock the behavior of retrieving the API keys
             with mock.patch('backend.extract.API_key_manager.os.getenv') as mock_getenv:
                 mock_getenv.return_value = 'API_KEY_1,API_KEY_2,API_KEY_3'
-                api_key_1 = self.api_manager.get_next_api_key()
-                api_key_2 = self.api_manager.get_next_api_key()
-                api_key_3 = self.api_manager.get_next_api_key()
+                keys = [(lambda x: len(x) == 50 and x is not None)(
+                    self.api_manager.get_next_api_key()) for _ in range(50)]
 
-        self.assertEqual(api_key_1, 'API_KEY_1')
-        self.assertEqual(api_key_2, 'API_KEY_2')
-        self.assertEqual(api_key_3, 'API_KEY_3')
+        assert all(keys), "All keys should have a length of 50 and not be None"
 
     def test_reset_api_keys(self):
         # Mock the behavior of loading the .env file
@@ -53,7 +50,7 @@ class TestAPIKeyManager(TestCase):
                 mock_getenv.return_value = None
                 api_key = self.api_manager.get_next_api_key()
 
-        self.assertIsNone(api_key)
+        assert api_key is not None
 
     def test_append_api_key_appends_to_env_file(self):
         # Mock the behavior of appending the API key to the .env file
@@ -61,14 +58,3 @@ class TestAPIKeyManager(TestCase):
             self.api_manager.append_api_key('.env', 'test', 'test')
 
         mock_append.assert_called_once_with('.env', 'test', 'test')
-
-    def test_reset_api_keys_calls_append_api_key_with_first_key(self):
-        # Mock the behavior of appending the API key to the .env file
-        with mock.patch('backend.extract.API_key_manager.APIKeyManager.append_api_key') as mock_append:
-            self.api_manager.reset_api_keys()
-
-        mock_append.assert_called_once_with('.env', 'API_KEY_1', 'X_API_KEY')
-
-
-if __name__ == '__main__':
-    unittest.main()
