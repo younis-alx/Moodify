@@ -19,10 +19,10 @@ class Twitter:
     def get_tweet(self, tweet_id):
         """Returns the tweet details with the given tweet ID"""
 
+        if tweet_id is None:
+            raise ValueError('Tweet ID cannot be None')
         if len(tweet_id) != 19:
             raise ValueError('Tweet ID must be 19 characters long')
-        elif tweet_id is None:
-            raise ValueError('Tweet ID cannot be None')
 
         api = self.api_key.get_next_api_key()
         url = "https://twitter154.p.rapidapi.com/tweet/details"
