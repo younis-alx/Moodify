@@ -16,6 +16,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_HOST: ${{ secrets.X_API_HOST }}
 
     steps:
     - uses: actions/checkout@v3
@@ -36,3 +39,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+      
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: pytest-results
+        path: test-results
+        retention-days: 30
