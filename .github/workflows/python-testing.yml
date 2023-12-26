@@ -13,7 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    # env:
+    env:
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_HOST: ${{ secrets.X_API_HOST }}
 
     steps:
     - uses: actions/checkout@v3
