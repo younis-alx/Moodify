@@ -28,6 +28,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+        export PYTHONPATH="${PYTHONPATH}:/root/code-folder/alx/moodify/backend"
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
