@@ -10,12 +10,9 @@ class TestAPIKeyManager:
 
     def test_get_next_api_key(self):
         # Mock the behavior of loading the .env file
-        with mock.patch('backend.extract.API_key_manager.dotenv.load_dotenv'):
-            # Mock the behavior of retrieving the API keys
-            with mock.patch('backend.extract.API_key_manager.os.getenv') as mock_getenv:
-                mock_getenv.return_value = 'API_KEY_1,API_KEY_2,API_KEY_3'
-                keys = [(lambda x: len(x) == 50 and x is not None)(
-                    self.api_manager.get_next_api_key()) for _ in range(50)]
+
+        keys = [(lambda x: len(x) == 50 and x is not None)(
+            self.api_manager.get_next_api_key()) for _ in range(50)]
 
         assert all(keys), "All keys should have a length of 50 and not be None"
 
