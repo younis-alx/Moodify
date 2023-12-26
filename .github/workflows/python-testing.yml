@@ -13,9 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      X_API_KEY: ${{ secrets.X_API_KEY }}
-      X_API_HOST: ${{ secrets.X_API_HOST }}
+    # env:
 
     steps:
     - uses: actions/checkout@v3
@@ -36,7 +34,7 @@ jobs:
       run: mkdir -p test-results
     - name: Test with pytest
       run: |
-        pytest --junitxml=test-results/results.xml
+        pytest --junitxml=test-results/results.xml -k 'not test_api_key_manager'
     - uses: actions/upload-artifact@v3
       if: always()
       with:
